@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li:not(:last-child) {
+    margin-bottom: .5rem;
+}
+
+.menu-item .title,
+.menu-item .price {
+    font-weight: bold;
+}
+.menu-item .description {
+    font-style: italic;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 992px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.menu-item {
+    grid-column: 1;
+}
+.menu-item:last-child {
+    grid-column: 2;
+}
+
+.logo {
+    grid-column: 2;
+}
+.menu-item h2 {
+    text-align: center;
+}
+.menu-item li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .5rem;
+}
+.menu-item li .price {
+    margin-left: auto;
+}
+
+.menu-item.special {
+    grid-row: span 3;
+    grid-column: 2;
+}
+
+.menu-item.special li {
+    display: grid;
+    grid-template: auto / 3fr 1fr;
+}
+
+.menu-item.special li:not(:last-child) {
+    margin-bottom: 2rem;
+}
+
+.menu-item.special li .description {
+    grid-row: 2;
+}
+
+.menu-item.special li .price {
+    grid-column: 2;
+}
